@@ -12,6 +12,7 @@ export default class SearchScreen extends Component {
       repos: []
     };
     this.changeUsername = this.changeUsername.bind(this);
+    this.updateRepos = this.updateRepos.bind(this);
   }
 
   render() {
@@ -22,7 +23,9 @@ export default class SearchScreen extends Component {
       }}>
         <RepoSearchBar 
           onChangeText={this.changeUsername}/>
-        <RepoSearchButton />
+        <RepoSearchButton 
+          username={this.state.username}
+          onPress={this.updateRepos} />
         <RepoList />
       </View>
     );
