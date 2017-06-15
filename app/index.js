@@ -5,7 +5,11 @@ import SearchScreen from './scenes/SearchScreen';
 
 
 const GitHubProjects = StackNavigator({
-  Search: { screen: SearchScreen },
+  Search: {
+    screen: SearchScreen,
+    navigationOptions: {
+      title: 'GitHub Search'
+    }},
 });
 
 export default GitHubProjects;
