@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import { View } from 'react-native';
 import RepoSearchBar from './components/RepoSearchBar';
 import RepoSearchButton from './components/RepoSearchButton';
+import RepoList from './components/RepoList';
 
 export default class SearchScreen extends Component {
   render() {
@@ -12,6 +13,7 @@ export default class SearchScreen extends Component {
       }}>
         <RepoSearchBar />
         <RepoSearchButton />
+        <RepoList />
       </View>
     );
   }
