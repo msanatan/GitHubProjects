@@ -11,6 +11,7 @@ export default class SearchScreen extends Component {
       username: '',
       repos: []
     };
+    this.changeUsername = this.changeUsername.bind(this);
   }
 
   render() {
@@ -19,7 +20,8 @@ export default class SearchScreen extends Component {
         flex: 1,
         flexDirection: 'column',
       }}>
-        <RepoSearchBar />
+        <RepoSearchBar 
+          onChangeText={this.changeUsername}/>
         <RepoSearchButton />
         <RepoList />
       </View>
