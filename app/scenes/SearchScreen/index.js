@@ -25,5 +25,17 @@ export default class SearchScreen extends Component {
       </View>
     );
   }
+
+  changeUsername(newUsername) {
+    this.setState({
+      username: newUsername
+    });
+  }
+
+  updateRepos(newRepos) {
+    this.setSate({
+      repos: newRepos
+    });
+  }
 }
 
