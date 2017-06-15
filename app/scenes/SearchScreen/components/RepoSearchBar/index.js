@@ -8,7 +8,8 @@ export default class RepoSearchBar extends Component {
     return (
       <SearchBar 
         lightTheme
-        placeholder='Search for user...' />
+        placeholder='Search for user...'
+        autoCapitalize='none' />
     );
   }
 }
