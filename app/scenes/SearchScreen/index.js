@@ -38,7 +38,7 @@ export default class SearchScreen extends Component {
   }
 
   updateRepos(newRepos) {
-    this.setSate({
+    this.setState({
       repos: newRepos
     });
   }
