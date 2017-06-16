@@ -6,7 +6,7 @@ import {
 export default class RepoSearchBar extends Component {
   constructor(props) {
     super(props)
-    this.handleChange = this.handleChange.bind(this);
+    this.handleChangeText = this.handleChangeText.bind(this);
   }
 
   render() {
@@ -15,11 +15,11 @@ export default class RepoSearchBar extends Component {
         lightTheme
         placeholder='Search for user...'
         autoCapitalize='none'
-        onChangeText={this.handleChange} />
+        onChangeText={this.handleChangeText} />
     );
   }
 
-  handleChange(newUsername) {
+  handleChangeText(newUsername) {
     this.props.onChangeText(newUsername);
   }
 }
