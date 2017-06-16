@@ -28,7 +28,8 @@ export default class SearchScreen extends Component {
           disabled={buttonDisabled}
           username={this.state.username}
           onPress={this.updateRepos} />
-        <RepoList />
+        <RepoList 
+          list={this.state.repos}/>
       </View>
     );
   }
