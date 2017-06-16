@@ -12,6 +12,7 @@ export default class RepoSearchButton extends Component {
     return (
       <Button 
         raised
+        disabled={this.props.disabled}
         textStyle={{textAlign: 'center'}}
         title='Search'
         onPress={this.handlePress} />
@@ -19,6 +20,7 @@ export default class RepoSearchButton extends Component {
   }
 
   handlePress() {
+    console.log(this.props);
     getRepos(this.props.username)
       .then((jsonData) => {
         this.props.onPress(jsonData);
