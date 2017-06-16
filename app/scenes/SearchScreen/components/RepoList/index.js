@@ -10,16 +10,22 @@ export default class RepoList extends Component {
   }
 
   render() {
+    const { navigate } = this.props.navigation;
     return (
       <List>
         {
           this.props.list.map((item, i) => (
             <ListItem 
               key={i}
-              title={item.name} />
+              title={item.name}
+              onPress={() => navigate('RepoView', {
+                reponame: item.name,
+                url: item.url
+              })} />
           ))
         }
       </List>
     );
   }
 }
+
