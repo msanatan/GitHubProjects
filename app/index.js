@@ -2,7 +2,7 @@ import {
   StackNavigator,
 } from 'react-navigation';
 import SearchScreen from './scenes/SearchScreen';
-
+import RepoViewScreen from './scenes/RepoViewScreen';
 
 const GitHubProjects = StackNavigator({
   Search: {
@@ -10,6 +10,9 @@ const GitHubProjects = StackNavigator({
     navigationOptions: {
       title: 'GitHub Search'
     }},
+  RepoView: {
+    screen: RepoViewScreen
+  },
 });
 
 export default GitHubProjects;
