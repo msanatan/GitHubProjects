@@ -8,7 +8,7 @@ const handleErrors = (response) => {
   return response;
 };
 
-const getRepos = (username) => {
+export const getRepos = (username) => {
   let name = username.trim().toLowerCase();
   if (name === '') {
     return [];
@@ -20,6 +20,4 @@ const getRepos = (username) => {
       console.error(error);
     })
 };
-
-export { getRepos };
 
