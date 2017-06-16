@@ -29,7 +29,8 @@ export default class SearchScreen extends Component {
           username={this.state.username}
           onPress={this.updateRepos} />
         <RepoList 
-          list={this.state.repos}/>
+          list={this.state.repos}
+          navigation={this.props.navigation} />
       </View>
     );
   }
