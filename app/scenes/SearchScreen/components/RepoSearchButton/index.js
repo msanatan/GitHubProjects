@@ -20,7 +20,6 @@ export default class RepoSearchButton extends Component {
   }
 
   handlePress() {
-    console.log(this.props);
     getRepos(this.props.username)
       .then((jsonData) => {
         this.props.onPress(jsonData);
