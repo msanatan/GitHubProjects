@@ -16,6 +16,7 @@ export default class SearchScreen extends Component {
   }
 
   render() {
+    let buttonDisabled = this.state.username.length === 0;
     return (
       <View style={{
         flex: 1,
@@ -23,7 +24,8 @@ export default class SearchScreen extends Component {
       }}>
         <RepoSearchBar 
           onChangeText={this.changeUsername}/>
-        <RepoSearchButton 
+        <RepoSearchButton
+          disabled={buttonDisabled}
           username={this.state.username}
           onPress={this.updateRepos} />
         <RepoList />
