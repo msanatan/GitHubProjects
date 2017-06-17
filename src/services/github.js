@@ -18,6 +18,17 @@ export const getRepos = (username) => {
     .then((response) => {return response.json()})
     .catch((error) => {
       console.error(error);
-    })
+    });
 };
+
+export const getReadme = (url) => {
+  let headers = new Headers();
+  headers.append('Accept', 'application/vnd.github.VERSION.html');
+  return fetch(`${url}/readme`, {headers})
+    .then(handleErrors)
+    .then((response => {return response.text()}))
+    .catch((error) => {
+      console.error(error);
+    });
+}
 
