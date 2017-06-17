@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
-import { Text } from 'react-native';
+import { WebView } from 'react-native';
+import { getReadme } from '../../services/github';
 
 export default class RepoViewScreen extends Component {
   static navigationOptions = ({ navigation }) => ({
@@ -7,11 +8,27 @@ export default class RepoViewScreen extends Component {
   });
   constructor(props) {
     super(props);
+    this.state = {
+      readme: '',
+    };
+  }
+
+  componentDidMount() {
+    getReadme(this.props.navigation.state.params.url)
+      .then((readme) => {
+        this.setState({
+          readme: readme
+        });
+      })
+      .catch((error) => {
+        console.error(error);
+      });
   }
 
   render() {
     return (
-      <Text>Placeholder</Text>
+      <WebView 
+        source={{html: this.state.readme}} />
     );
   }
 }
