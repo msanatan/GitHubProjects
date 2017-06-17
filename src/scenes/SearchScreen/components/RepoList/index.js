@@ -18,9 +18,9 @@ export default class RepoList extends Component {
             <ListItem 
               key={i}
               title={item.name}
-              url={item.url}
               onPress={() => navigate('RepoView', {
-                reponame: item.name
+                reponame: item.name,
+                url: item.url
               })} />
           ))
         }
